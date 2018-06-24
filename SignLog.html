@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Đăng ký/ Đăng Nhập</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="OneTech shop project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="plugins/slick-1.8.0/slick.css">
+	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="css/LoginSignUp.css">
+	<script src="js/site.js"></script>
+	<script src="js/index.js"></script>
+</head>
+
+<body>
+	<div class="super_container">
+
+		<!-- Header -->
+		<header class="header">
+
+			<!-- Top Bar -->
+
+			<div class="top_bar">
+				<div class="container">
+					<div class="row">
+						<div class="col d-flex flex-row">
+							<div class="top_bar_contact_item">
+								<div class="top_bar_icon">
+									<img src="images/phone.png" alt="">
+								</div>+84 168 888 9316</div>
+							<div class="top_bar_contact_item">
+								<div class="top_bar_icon">
+									<img src="images/mail.png" alt="">
+								</div>
+								<a href="mailto:fastsales@gmail.com">admin@gmail.com</a>
+							</div>
+							<div class="top_bar_content ml-auto">
+								<div class="top_bar_user">
+									<div class="user_icon">
+										<img src="images/user.svg" alt="">
+									</div>
+									<div>
+										<a href="SignLog.html">Đăng ký</a>
+									</div>
+									<div>
+										<a href="SignLog.html">Đăng nhập</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Header Main -->
+
+			<div class="header_main">
+				<div class="container">
+					<div class="row">
+
+						<!-- Logo -->
+						<div class="col-lg-2 col-sm-3 col-3 order-1">
+							<div class="logo_container">
+								<div class="logo">
+									<a href="index.html">Xe Hơi FIT</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- Search -->
+						<div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+							<div class="header_search">
+								<div class="header_search_content">
+									<div class="header_search_form_container">
+										<form action="search.html" class="header_search_form clearfix">
+											<input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
+											<div class="custom_dropdown">
+												<div class="custom_dropdown_list">
+													<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
+													<i class="fas fa-chevron-down"></i>
+													<ul id="dropDown01" class="custom_list clc">
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Tất cả danh mục</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Audi</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">BMW</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Chevrolet</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Ford</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Lexus</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Mercedes-Benz</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Nissan</a>
+														</li>
+														<li onclick="location.href='search.html';">
+															<a class="clc" href="#">Toyota</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<button type="submit" class="header_search_button trans_300" value="Submit">
+												<img src="images/search.png" alt="">
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Wishlist -->
+						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+								<!-- Cart -->
+								<div class="cart" id="cart-shop">
+										<div class="cart_container d-flex flex-row align-items-center justify-content-end">
+											<div class="cart_icon">
+												<img src="images/cart.png" alt="">
+												<div class="cart_count">
+													<span id="count-item" data-count ="0">0</span>
+												</div>
+											</div>
+											<div class="cart_content">
+												<div class="cart_text">
+													<a href="cart.html">Giỏ hàng</a>
+												</div>
+												<div class="cart_price">$0</div>
+											</div>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+
+			<nav class="main_nav">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="main_nav_content d-flex flex-row">
+								<!-- Categories Menu -->
+
+								<div class="cat_menu_container">
+									<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+										<a href="index.html">
+											<div class="cat_menu_text">Trang chủ</div>
+										</a>
+									</div>
+								</div>
+
+								<!-- Main Nav Menu -->
+
+								<div class="main_nav_menu ml-auto">
+									<ul class="standard_dropdown main_nav_dropdown">
+										<li>
+											<a href="shop.html">Tất cả sản phẩm
+												<i class="fas fa-chevron-down"></i>
+											</a>
+										</li>
+										<li class="hassubs">
+											<a href="#">Nhà sản xuất
+												<i class="fas fa-chevron-down"></i>
+											</a>
+											<ul id="list01">
+												<li>
+													<a href="shop.html">Audi
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">BMW
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Chevrolet
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Ford
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Lexus
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Mercedes-Benz
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Nissan
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Toyota
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+											</ul>
+										</li>
+										<li class="hassubs">
+											<a href="#">Loại sản phẩm
+												<i class="fas fa-chevron-down"></i>
+											</a>
+											<ul id="list02">
+												<li>
+													<a href="shop.html">Năm 2018
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Năm 2017
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Năm 2016
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Năm 2015
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Năm 2014
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+												<li>
+													<a href="shop.html">Năm 2013
+														<i class="fas fa-chevron-down"></i>
+													</a>
+												</li>
+											</ul>
+										</li>
+
+
+										<li>
+											<a href="contact.html">Liên hệ
+												<i class="fas fa-chevron-down"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<!-- Menu Trigger -->
+
+								<div class="menu_trigger_container ml-auto">
+									<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+										<div class="menu_burger">
+											<div class="menu_trigger_text">menu</div>
+											<div class="cat_burger menu_burger_inner">
+												<span></span>
+												<span></span>
+												<span></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+
+			<!-- Menu -->
+
+			<div class="page_menu">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+
+							<div class="page_menu_content">
+
+								<div class="page_menu_search">
+									<form action="#">
+										<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+									</form>
+								</div>
+								<ul class="page_menu_nav">
+									<li class="page_menu_item has-children">
+										<a href="#">Language
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="page_menu_selection">
+											<li>
+												<a href="#">English
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Italian
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Spanish
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Japanese
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="page_menu_item has-children">
+										<a href="#">Currency
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="page_menu_selection">
+											<li>
+												<a href="#">US Dollar
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">EUR Euro
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">GBP British Pound
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">JPY Japanese Yen
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="page_menu_item">
+										<a href="#">Home
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</li>
+									<li class="page_menu_item has-children">
+										<a href="#">Super Deals
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="page_menu_selection">
+											<li>
+												<a href="#">Super Deals
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li class="page_menu_item has-children">
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+												<ul class="page_menu_selection">
+													<li>
+														<a href="#">Menu Item
+															<i class="fa fa-angle-down"></i>
+														</a>
+													</li>
+													<li>
+														<a href="#">Menu Item
+															<i class="fa fa-angle-down"></i>
+														</a>
+													</li>
+													<li>
+														<a href="#">Menu Item
+															<i class="fa fa-angle-down"></i>
+														</a>
+													</li>
+													<li>
+														<a href="#">Menu Item
+															<i class="fa fa-angle-down"></i>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="page_menu_item has-children">
+										<a href="#">Featured Brands
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="page_menu_selection">
+											<li>
+												<a href="#">Featured Brands
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="page_menu_item has-children">
+										<a href="#">Trending Styles
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="page_menu_selection">
+											<li>
+												<a href="#">Trending Styles
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+											<li>
+												<a href="#">Menu Item
+													<i class="fa fa-angle-down"></i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li class="page_menu_item">
+										<a href="blog.html">blog
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</li>
+									<li class="page_menu_item">
+										<a href="contact.html">contact
+											<i class="fa fa-angle-down"></i>
+										</a>
+									</li>
+								</ul>
+
+								<div class="menu_contact">
+									<div class="menu_contact_item">
+										<div class="menu_contact_icon">
+											<img src="images/phone_white.png" alt="">
+										</div>+38 068 005 3570</div>
+									<div class="menu_contact_item">
+										<div class="menu_contact_icon">
+											<img src="images/mail_white.png" alt="">
+										</div>
+										<a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</header>
+
+		<!-- Banner -->
+		<!-- Characteristics -->
+		<!-- Deals of the week -->
+		<!-- Popular Categories -->
+		<!-- Banner -->
+		<!-- Hot New Arrivals -->
+
+		<div class="new_arrivals">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						  <div class="cotn_principal">
+    <div class="cont_centrar">
+
+      <div class="cont_login">
+        <div class="cont_info_log_sign_up">
+          <div class="col_md_login">
+            <div class="cont_ba_opcitiy">
+
+              <h2>ĐĂNG NHẬP</h2>  
+              <p>&nbsp</p> 
+              <button class="btn_login" onclick="cambiar_login()">ĐĂNG NHẬP</button>
+            </div>
+          </div>
+          <div class="col_md_sign_up">
+            <div class="cont_ba_opcitiy">
+              <h2>ĐĂNG KÝ</h2>
+
+
+              <p>&nbsp</p>
+
+              <button class="btn_sign_up" onclick="cambiar_sign_up()">ĐĂNG KÝ</button>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="cont_back_info">
+         <div class="cont_img_back_grey">
+           <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+         </div>
+
+       </div>
+       <div class="cont_forms" >
+        <div class="cont_img_back_">
+         <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+       </div>
+       <div class="cont_form_login">
+        <a href="" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+        <h2>&nbsp</h2>
+        <input type="text" placeholder="Email" />
+        <input type="password" placeholder="Mật khẩu" />
+        <form action="index.html">
+        <button class="btn_login" onclick="cambiar_login()">ĐĂNG NHẬP</button>
+        </form>
+      </div>
+
+      <div class="cont_form_sign_up">
+        <a href="" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+        <input type="text" placeholder="Email" />
+        <input type="text" placeholder="Tên người dùng" />
+        <input type="password" placeholder="Mật khẩu" />
+        <input type="password" placeholder="Nhập lại mật khẩu" />
+        <form action="RegSuccessful.html" onsubmit="return checkform(this);">
+        	 <!-- START CAPTCHA -->
+<br>
+<div class="capbox">
+
+<div id="CaptchaDiv"></div>
+
+<div class="capbox-inner">
+Type the above number:<br>
+
+<input type="hidden" id="txtCaptcha">
+<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+</div>
+</div>
+<br>
+<!-- END CAPTCHA -->
+        <button type="submit" class="btn_sign_up" onclick="cambiar_sign_up()">ĐĂNG KÝ</button>
+       
+
+        </form>
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+
+<script  src="js/LoginSignUp.js"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Hot New Arrivals -->
+		<div style="margin-top: 60px;">
+
+		</div>
+
+		<!-- Best Sellers -->
+		<!-- Adverts -->
+		<!-- Trends -->
+		<!-- Reviews -->
+		<!-- Recently Viewed -->
+		<!-- Brands -->
+		<!-- Newsletter -->
+		<!-- Footer -->
+		<!-- Copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+
+						<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+							<div class="copyright_content">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with
+								<i class="fa fa-heart" aria-hidden="true"></i> by
+								<a href="#">Xe hơi FIT</a>
+								Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+							</div>
+							<div class="logos ml-sm-auto">
+								<ul class="logos_list">
+									<li>
+										<a href="#">
+											<img src="images/logos_1.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_2.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_3.png" alt="">
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<img src="images/logos_4.png" alt="">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	</div>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/greensock/TweenMax.min.js"></script>
+	<script src="plugins/greensock/TimelineMax.min.js"></script>
+	<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+	<script src="plugins/greensock/animation.gsap.min.js"></script>
+	<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/slick-1.8.0/slick.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="js/custom.js"></script>
+<script type="text/javascript">
+
+// Captcha Script
+
+function checkform(theform){
+var why = "";
+
+if(theform.CaptchaInput.value == ""){
+why += "- Please Enter CAPTCHA Code.\n";
+}
+if(theform.CaptchaInput.value != ""){
+if(ValidCaptcha(theform.CaptchaInput.value) == false){
+why += "- The CAPTCHA Code Does Not Match.\n";
+}
+}
+if(why != ""){
+alert(why);
+return false;
+}
+}
+
+var a = Math.ceil(Math.random() * 9)+ '';
+var b = Math.ceil(Math.random() * 9)+ '';
+var c = Math.ceil(Math.random() * 9)+ '';
+var d = Math.ceil(Math.random() * 9)+ '';
+var e = Math.ceil(Math.random() * 9)+ '';
+
+var code = a + b + c + d + e;
+document.getElementById("txtCaptcha").value = code;
+document.getElementById("CaptchaDiv").innerHTML = code;
+
+// Validate input against the generated number
+function ValidCaptcha(){
+var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+if (str1 == str2){
+return true;
+}else{
+return false;
+}
+}
+
+// Remove the spaces from the entered and generated code
+function removeSpaces(string){
+return string.split(' ').join('');
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+body{
+    position: relative;
+}
+.img-fly{
+    position: absolute;
+    z-index: 99999;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid blue;
+    transition: all 1s ease;
+
+}

@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var configValues = require("../config/index");
+var configValues = require("../../config/index");
 var connection = mysql.createConnection({
     host: configValues.host,
     user: configValues.username,

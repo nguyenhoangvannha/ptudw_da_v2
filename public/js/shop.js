@@ -22,10 +22,11 @@ function createShopContent(jsonFile, mark, callback) {
         for (var i = 0; i < 20; i++) {
             var hinhAnh, ten, giaBan, urlXe;
             try {
-                hinhAnh = json[i].hinhAnh;
-                ten = json[i].ten;
-                giaBan = json[i].giaBan;
-                urlXe = json[i].urlXe;
+                hinhAnh = json[i].image;
+                ten = json[i].name;
+                ten = ten.substring(0, 20) + '...';
+                giaBan = json[i].price;
+                //urlXe = json[i].urlXe;
                 urlXe = "/product.html"
             }
             catch (err) {
@@ -34,7 +35,7 @@ function createShopContent(jsonFile, mark, callback) {
             if(hinhAnh == undefined){
                 urlHinh = '/images/noimage.png';
             } else {
-                urlHinh = "carsdata" + hinhAnh;
+                urlHinh = "data/" + hinhAnh;
             }
             var s = createShopItem(urlHinh, ten
                 , "$" + giaBan, urlXe, ten, mark);

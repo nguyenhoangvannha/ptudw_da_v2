@@ -1,28 +1,21 @@
 {
-  "name": "ptudw_da",
-  "version": "1.0.0",
-  "description": "Final project for PTUDWEB 2018 HCMUS FIT",
+  "name": "pttk-da",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The final project fo PTTK_PM 2018 HCMUS IT K15",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nguyenhoangvannha/ptudw_da.git"
-  },
-  "author": "",
+  "author": "nhvn",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nguyenhoangvannha/ptudw_da/issues"
-  },
-  "homepage": "https://github.com/nguyenhoangvannha/ptudw_da#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.3",
+    "cookie-parser": "~1.4.3",
     "ejs": "^2.6.1",
-    "express": "^4.16.3",
+    "express": "~4.16.0",
+    "morgan": "~1.9.0",
     "mysql": "^2.15.0",
-    "nodemon": "^1.17.5",
-    "path": "^0.12.7"
+    "request": "^2.86.0"
   }
 }

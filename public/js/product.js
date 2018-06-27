@@ -25,10 +25,11 @@ function createContent(jsonFile, callback) {
         for (var i = 1; i < 6; i++) {
             var hinhAnh, ten, giaBan, urlXe;
             try {
-                hinhAnh = json[i].hinhAnh;
-                ten = json[i].ten;
-                giaBan = json[i].giaBan;
-                urlXe = json[i].urlXe;
+                hinhAnh = json[i].image;
+                ten = json[i].name;
+                ten = ten.substring(0, 25) + '...';
+                giaBan = json[i].price;
+                //urlXe = json[i].urlXe;
 
             }
             catch (err) {
@@ -37,10 +38,10 @@ function createContent(jsonFile, callback) {
             if(hinhAnh == undefined){
                 urlHinh = '/images/noimage.png';
             } else {
-                urlHinh = "carsdata" + hinhAnh;
+                urlHinh = "data/" + hinhAnh;
             }
             var s = createItem(urlHinh, ten
-                , "$" + giaBan);
+                ,giaBan);
             html += s;
         }
         callback(html);

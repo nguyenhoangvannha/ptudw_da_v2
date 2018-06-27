@@ -37,12 +37,12 @@ function createResultContent(jsonFile, callback) {
         for (var i = 0; i < 20; i++) {
             var loai, moTa,hinhAnh, ten, giaBan, urlXe;
             try {
-                loai = json[i].loai;
-                moTa = json[i].moTa;
-                hinhAnh = json[i].hinhAnh;
-                ten = json[i].ten;
-                giaBan = json[i].giaBan;
-                urlXe = json[i].urlXe;
+                loai = "";
+                moTa = json[i].des.substring(0,55);
+                hinhAnh = json[i].image;
+                ten = json[i].name;
+                giaBan = json[i].price;
+                //urlXe = json[i].urlXe;
                 urlXe = "/product.html"
             }
             catch (err) {
@@ -51,7 +51,7 @@ function createResultContent(jsonFile, callback) {
             if(hinhAnh == undefined){
                 urlHinh = '/images/noimage.png';
             } else {
-                urlHinh = "carsdata" + hinhAnh;
+                urlHinh = "data/" + hinhAnh;
             }
             var s = createResultItem(ten, urlHinh, giaBan, moTa, loai);
             html += s;

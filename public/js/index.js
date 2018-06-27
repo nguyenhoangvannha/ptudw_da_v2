@@ -79,11 +79,12 @@ function createSliderContent(jsonFile, mark, callback) {
         for (var i = 0; i < 10; i++) {
             var hinhAnh, ten, giaBan, urlXe;
             try {
-                hinhAnh = json[i].hinhAnh;
-                ten = json[i].ten;
-                giaBan = json[i].giaBan;
-                urlXe = json[i].urlXe;
-                urlXe ="/carsdata/" + json[i].nhaSanXuat+ "/" + ten + ".html";
+                hinhAnh = json[i].image + '/';
+                ten = json[i].name;
+                ten = ten.substring(0, 30) + '...';
+                giaBan = json[i].price;
+                //urlXe = json[i].link;
+                //urlXe ="/carsdata/" + json[i].nhaSanXuat+ "/" + ten + ".html";
                 urlXe = "/product.html"
             }
             catch (err) {
@@ -92,7 +93,7 @@ function createSliderContent(jsonFile, mark, callback) {
             if (hinhAnh == undefined) {
                 urlHinh = '/images/noimage.png';
             } else {
-                urlHinh = "carsdata" + hinhAnh;
+                urlHinh = "data/" + hinhAnh;
             }
 
             var s = createSliderItem(urlHinh, ten

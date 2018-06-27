@@ -22,6 +22,11 @@ function getProduct(res, ID) {
             console.log(result,ID);
         }
     });
+   // for( : vonfg){
+     //   s1 (sp.ten + sp.mota).trim().tolowercase(); Nokia 1
+       // s2 key.trim.tolowercase; nokia1
+        //s1.containt s2;
+    //}
 }
 
 function getProducts(res) {
@@ -66,6 +71,9 @@ router.get('/companies', function (req, res, next) {
 })
 router.get('/product/:ID', function (req, res, next) {
     getProduct(res, req.params.ID);
+})
+router.get('/search/:KEY', function (req, res, next) {
+    searchProducts(res);
 })
 
 module.exports = router;

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app.shop">
+<html lang="en" ng-app="app.search">
 
 <head>
-    <title>Xe hơi FIT - Cửa hàng</title>
+    <title>Xe hơi FIT - Tìm kiếm</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="OneTech shop project">
@@ -14,12 +14,11 @@
     <link rel="stylesheet" type="text/css" href="/assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/shop_styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/shop_responsive.css">
-    <script src="/assets/js/site.js"></script>
-    <script src="/assets/js/shop.js"></script>
 </head>
 
-<body ng-controller="shopController">
+<body ng-controller="searchController">
     <div class="super_container">
 
         <!-- Header -->
@@ -69,7 +68,7 @@
                         <div class="col-lg-2 col-sm-3 col-3 order-1">
                             <div class="logo_container">
                                 <div class="logo">
-                                    <a href="/">Xe hơi FIT</a>
+                                    <a href="index.html">Xe hơi FIT</a>
                                 </div>
                             </div>
                         </div>
@@ -86,22 +85,22 @@
                                                     <span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
                                                     <i class="fas fa-chevron-down"></i>
                                                     <ul id="dropDown01" class="custom_list clc">
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">Tất cả danh mục</a>
                                                         </li>
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">HDD</a>
                                                         </li>
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">Ổ cứng SSD Di Động</a>
                                                         </li>
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">Ram Laptop, Desktop</a>
                                                         </li>
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">SSD</a>
                                                         </li>
-                                                        <li onclick="location.href=search;">
+                                                        <li onclick="location.href=search.html;">
                                                             <a class="clc" href="#">USB</a>
                                                         </li>
                                                     </ul>
@@ -153,7 +152,7 @@
 
                                 <div class="cat_menu_container">
                                     <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                                        <a href="/">
+                                        <a href="index.html">
                                             <div class="cat_menu_text">Trang chủ</div>
                                         </a>
                                     </div>
@@ -557,40 +556,36 @@
                     </div>
 
                     <div class="col-lg-9">
-
                         <!-- Shop Content -->
-
                         <div class="shop_content">
                             <div class="shop_bar clearfix">
                                 <div id="productCount" class="shop_product_count">
                                     <span>{{products.length}}</span> sản phẩm
+                                </div>   
+                            </div>
+                                <!-- Item -->
+                                <div class="" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+                                    <!-- Product item -->
+                                        <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                                            <div class="card-body d-flex flex-column align-items-start">
+                                                <strong class="d-inline-block mb-2 text-primary">{{products[i].TEN.substring(0,16)}}...</strong>
+                                                    <h3 class="mb-0">
+                                                        <a class="text-dark" href="#">{{products[i].GIA}}</a>
+                                                    </h3>
+                                                <div class="mb-1 text-muted">
+                                                    Bảo Hành: {{products[i].BAOHANH}}
+                                                </div>
+                                                <p style="width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{products[i].MOTA}}</p>
+                                                <a href="/product/{{products[i].NHASANXUAT}}/{{products[i].ID}}">Chi tiết</a>
+                                            </div>
+                                            <img class="card-img-right flex-auto d-none d-md-block"  alt="{{products[i].TEN.substring(0,16)}}..." style="width: 220px; height: 170px;" src="/assets/carsdata{{products[i].HINHANH}}" data-holder-rendered="true">
+        
+                                            <div class="product_extras">
+                                                <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
+                                            </div>                                
+                                        </div>
                                 </div>
                                 
-                            </div>
-
-                            <div class="product_grid">
-                                <div class="product_grid_border"></div>
-                                <!-- Item -->
-                                <div class="product_item" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]">
-                                    <div class="product_border"></div>
-                                    <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                        <img src="/assets/carsdata{{products[i].HINHANH}}" alt="" width="100" height="100">
-                                    </div>
-                                    <div class="product_content ">
-                                        <div class="product_price ">{{products[i].GIABAN}}</div>
-                                        <div class="product_name ">
-                                            <div>
-                                                <a href="/product/{{products[i].NHASANXUAT}}/{{products[i].ID}}" tabindex="0">{{products[i].TEN.substring(0,16)}}...</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul class="product_marks ">
-                                        <li class="product_mark product_discount ">-25%</li>
-                                        <li class="product_mark product_new "> + mark + </li>
-                                    </ul>
-                                </div>
-                            </div>
-
                             <!-- Shop Page Navigation -->
 
                             <div class="shop_page_nav d-flex flex-row ">
@@ -680,6 +675,8 @@
     <script src="/assets/js/popper.js "></script>
     <script src="/assets/js/bootstrap.min.js "></script>
     <script src="/assets/js/angular.min.js "></script>
+    <script src="/assets/js/main/search.js "></script>
+    <script src="/assets/js/main/services/svSearch.js "></script>
     <script src="/assets/js/main/shop.js "></script>
     <script src="/assets/js/main/services/svShop.js "></script>
     <script src="/assets/plugins/greensock/TweenMax.min.js "></script>
@@ -693,6 +690,36 @@
     <script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js "></script>
     <script src="/assets/plugins/parallax-js-master/parallax.min.js "></script>
     <script src="/assets/js/shop_custom.js "></script>
+    <script>
+            $(document).on('click', '.btn-buy', function (e) {
+                e.preventDefault();
+                var parent = $(this).parents('.arrivals_slider_item');
+                var cart = $(document).find('#cart-shop');
+                src = parent.find('img').attr('src');
+                var parTop = parent.offset().top;
+                var parLeft = parent.offset().left;
+
+                $('<img />', {
+                    class: 'img-fly',
+                    src: src,
+                }).appendTo('body').css({
+                    'top': parTop,
+                    'left': parseInt(parLeft) + parseInt(parent.width()) - 50
+                });
+
+                setTimeout(function () {
+                    $(document).find('.img-fly').css({
+                        'top': cart.offset().top,
+                        'left': cart.offset().left
+                    });
+                    setTimeout(function () {
+                        $(document).find('.img-fly').remove();
+                        var citem = parseInt(cart.find('#count-item').data('count')) + 1;
+                        cart.find('#count-item').text(citem).data('count', citem);
+                    }, 1000);
+                }, 500);
+            });
+        </script>
 </body>
 
 </html>

@@ -13,6 +13,9 @@ app.factory('svProduct', ['$http', function ($http) {
         getCompanyProducts: function (company) {
             console.log('company',company);
             return $http.get('/api/products/' + company);
-        }
+        },
+        getSameTypeProducts: function (LOAI) {
+            return $http.get('/api/products/sameTo/' + LOAI);
+        },
     }
 }])

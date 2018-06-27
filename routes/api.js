@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 var configValues = require("../config/index");
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 
 var connection = mysql.createConnection({
     host: configValues.host,
@@ -19,18 +21,27 @@ function getProduct(res, ID) {
             res.status(404).send(err);
         } else {
             res.send(result);
-            console.log(result,ID);
         }
     });
-   // for( : vonfg){
-     //   s1 (sp.ten + sp.mota).trim().tolowercase(); Nokia 1
-       // s2 key.trim.tolowercase; nokia1
-        //s1.containt s2;
+    // for( : vonfg){
+    //   s1 (sp.ten + sp.mota).trim().tolowercase(); Nokia 1
+    // s2 key.trim.tolowercase; nokia1
+    //s1.containt s2;
     //}
 }
 
 function getProducts(res) {
     connection.query(`SELECT * FROM ${configValues.tbl_sanpham}`, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send([]);
+        } else {
+            res.send(result);
+        }
+    });
+}
+function getSameTypeProducts(res, LOAI) {
+    connection.query(`SELECT * FROM ${configValues.tbl_sanpham} WHERE LOAI = '${LOAI}'`, function (err, result, fields) {
         if (err) {
             console.log(err);
             res.status(404).send([]);
@@ -60,6 +71,26 @@ function getCompanies(res) {
         }
     });
 }
+function postViewProduct(res, ID) {
+    var SOLUOTXEM;
+    connection.query(`SELECT * FROM ${configValues.tbl_sanpham}  WHERE ID=${ID}`, function (err, result, fields) {
+        if (err) {
+        } else {
+            SOLUOTXEM = result[0].SOLUOTXEM + 1;
+            var sql = `UPDATE ${configValues.tbl_sanpham} SET SOLUOTXEM = ${SOLUOTXEM} WHERE ID = ${ID}`;
+            connection.query(sql, function (err, result, fields) {
+                if (err) {
+                    console.log(err);
+                    res.status(404).send([]);
+                } else {
+                    res.send(result);
+                }
+            });
+        }
+    });
+
+
+}
 router.get('/products', function (req, res, next) {
     getProducts(res);
 })
@@ -74,6 +105,13 @@ router.get('/product/:ID', function (req, res, next) {
 })
 router.get('/search/:KEY', function (req, res, next) {
     searchProducts(res);
+})
+router.get('/products/sameTo/:LOAI', function (req, res, next) {
+    getSameTypeProducts(res, req.params.LOAI);
+})
+router.post('/view', jsonParser, function (req, res) {
+    //console.log('BODY',req.body.productID);
+    postViewProduct(res, req.body.productID);
 })
 
 router.get('/Governance/delete/:ID',function(req, res){

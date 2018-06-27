@@ -68,7 +68,7 @@
                         <div class="col-lg-2 col-sm-3 col-3 order-1">
                             <div class="logo_container">
                                 <div class="logo">
-                                    <a href="index.html">Xe hơi FIT</a>
+                                    <a href="/">Xe hơi FIT</a>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +152,7 @@
 
                                 <div class="cat_menu_container">
                                     <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                                        <a href="index.html">
+                                        <a href="/">
                                             <div class="cat_menu_text">Trang chủ</div>
                                         </a>
                                     </div>
@@ -172,43 +172,8 @@
                                                 <i class="fas fa-chevron-down"></i>
                                             </a>
                                             <ul id="list01">
-                                                <li>
-                                                    <a href="shop.html">Adata
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Apacer
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Crucial
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Intel
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Kingston
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Plextor
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Samsung
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Sandisk
+                                                <li ng-repeat="company in companies">
+                                                    <a href="company/{{company.NHASANXUAT}}">{{company.NHASANXUAT}}
                                                         <i class="fas fa-chevron-down"></i>
                                                     </a>
                                                 </li>
@@ -568,7 +533,7 @@
                                     <!-- Product item -->
                                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                                             <div class="card-body d-flex flex-column align-items-start">
-                                                <strong class="d-inline-block mb-2 text-primary">{{products[i].TEN.substring(0,16)}}...</strong>
+                                                <strong class="d-inline-block mb-2 text-primary">{{products[i].TEN.substring(0,30)}}...</strong>
                                                     <h3 class="mb-0">
                                                         <a class="text-dark" href="#">{{products[i].GIA}}</a>
                                                     </h3>

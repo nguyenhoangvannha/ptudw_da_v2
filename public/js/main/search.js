@@ -10,6 +10,7 @@ function SearchCtrl($scope, svSearch) {
     }, function (err) {
         console.log(err);
     });
+    
     //$scope.result = [];
     //svSearch.searchProducts(KEY).then(function (result) {
       //  $scope.result = result;

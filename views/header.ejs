@@ -1,3 +1,4 @@
+
 <!-- Header Main -->
 
 <div class="header_main">
@@ -25,29 +26,38 @@
 										<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 										<i class="fas fa-chevron-down"></i>
 										<ul id="dropDown01" class="custom_list clc">
-											<li onclick="location.href='search';">
+											<li onclick="location.href='/search';">
 												<a class="clc" href="#">Tất cả danh mục</a>
 											</li>
-											<li onclick="location.href='search';">
-												<a class="clc" href="#">HDD</a>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Audi</a>
 											</li>
-											<li onclick="location.href='search';">
-												<a class="clc" href="#">Ổ cứng SSD Di Động</a>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">BMW</a>
 											</li>
-											<li onclick="location.href='search';">
-												<a class="clc" href="#">Ram Laptop, Desktop</a>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Chevrolet</a>
 											</li>
-											<li onclick="location.href='search';">
-												<a class="clc" href="#">SSD</a>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Ford</a>
 											</li>
-											<li onclick="location.href='search';">
-												<a class="clc" href="#">USB</a>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Lexus</a>
+											</li>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Mercedes-Benz</a>
+											</li>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Nissan</a>
+											</li>
+											<li onclick="location.href='/search';">
+												<a class="clc" href="#">Toyota</a>
 											</li>
 										</ul>
 									</div>
 								</div>
 								<button type="submit" class="header_search_button trans_300" value="Submit">
-									<img src="assets/images/icon/search.png" alt="">
+									<img src="/assets/images/icon/search.png" alt="">
 								</button>
 							</form>
 						</div>
@@ -62,7 +72,7 @@
 					<div class="cart" id="cart-shop">
 						<div class="cart_container d-flex flex-row align-items-center justify-content-end">
 							<div class="cart_icon">
-								<img src="assets/images/icon/cart.png" alt="">
+								<img src="/assets/images/icon/cart.png" alt="">
 								<div class="cart_count">
 									<span id="count-item" data-count="0">0</span>
 								</div>
@@ -103,7 +113,7 @@
 					<div class="main_nav_menu ml-auto">
 						<ul class="standard_dropdown main_nav_dropdown">
 							<li>
-								<a href="shop">Tất cả sản phẩm
+								<a href="/shop">Tất cả sản phẩm
 									<i class="fas fa-chevron-down"></i>
 								</a>
 							</li>
@@ -112,11 +122,58 @@
 									<i class="fas fa-chevron-down"></i>
 								</a>
 								<ul>
-									<li ng-repeat="company in companies">
-										<a href="company/{{company.NHASANXUAT}}">{{company.NHASANXUAT}}
+									<!-- <a href="/company/{{company.NHASANXUAT}}">{{company.NHASANXUAT}}
+											<i class="fas fa-chevron-down"></i>
+										</a> -->
+									<!-- ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Audi">Audi
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/BMW">BMW
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Chevrolet">Chevrolet
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Ford">Ford
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Lexus">Lexus
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Mercedes-Benz">Mercedes-Benz
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Nissan">Nissan
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
+									<li class="ng-scope">
+										<a href="/company/Toyota">Toyota
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<!-- end ngRepeat: company in companies -->
 								</ul>
 
 							</li>
@@ -190,7 +247,7 @@
 
 <!-- Menu -->
 
-<div class="page_menu">
+<!-- <div class="page_menu">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -398,4 +455,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

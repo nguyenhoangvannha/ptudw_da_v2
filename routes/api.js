@@ -76,4 +76,10 @@ router.get('/search/:KEY', function (req, res, next) {
     searchProducts(res);
 })
 
+router.get('/Governance/delete/:ID',function(req, res){
+    res.send(req.params.ID);
+
+});
+
+
 module.exports = router;

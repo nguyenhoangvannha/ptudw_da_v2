@@ -10,7 +10,6 @@ var apiRouter = require('./routes/api');
 var productRouter = require('./routes/product');
 var shopRouter = require('./routes/shop');
 var searchRouter = require('./routes/search');
-var SingLogRouter = require('./routes/SignLog');
 
 var app = express();
 
@@ -33,7 +32,6 @@ app.use('/api', apiRouter);
 app.use('/product', productRouter);
 app.use('/shop', shopRouter);
 app.use('/search',searchRouter);
-app.use('/SignLog',SingLogRouter);
 app.listen(port, function () {
   console.log('App listeing on port', port);
 });

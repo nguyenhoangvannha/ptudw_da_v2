@@ -5,5 +5,6 @@ module.exports = {
     password: config.password,
     database: config.database,
     tbl_sanpham: config.tbl_sanpham,
-    tbl_nguoidung: config.tbl_nguoidung
+    tbl_nguoidung: config.tbl_nguoidung,
+    tbl_giohang: config.tbl_giohang
 }

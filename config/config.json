@@ -4,5 +4,6 @@
     "password":"",
     "database":"linhkienfitdb",
     "tbl_sanpham":"tbl_sanpham",
-    "tbl_nguoidung":"tbl_nguoidung"
+    "tbl_nguoidung":"tbl_nguoidung",
+    "tbl_giohang":"tbl_giohang"
 }

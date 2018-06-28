@@ -40,6 +40,16 @@ function getProducts(res) {
         }
     });
 }
+function getCartProducts(res, USERNAME) {
+    connection.query(`SELECT * FROM ${configValues.tbl_giohang} WHERE USERNAME = '${USERNAME}'`, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send([]);
+        } else {
+            res.send(result);
+        }
+    });
+}
 function searchProducts(res, KEY) {
     connection.query(`SELECT * FROM ${configValues.tbl_sanpham}`, function (err, result, fields) {
         if (err) {
@@ -154,6 +164,9 @@ router.get('/search/:KEY', function (req, res, next) {
 })
 router.get('/products/sameTo/:LOAI', function (req, res, next) {
     getSameTypeProducts(res, req.params.LOAI);
+})
+router.get('/cart/', function (req, res, next) {
+    getCartProducts(res, req.session.username);
 })
 router.post('/view', jsonParser, function (req, res) {
     //console.log('BODY',req.body.productID);

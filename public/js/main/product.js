@@ -54,5 +54,35 @@ function ProductCtrl($scope, svProduct, $routeParams, $location) {
             }
         });
     });
+    //Cart
+    $scope.cartCount = 0;
+    $scope.cartPrice = 0;
+    $scope.cartItems = [];
+    $scope.cartProducts = [];
+    svProduct.getCartProducts().then(function (result) {
+        $scope.cartItems = result.data;
+        $scope.cartItems.forEach(function (item) {// lặp trong danh sách các sản phẩm của giỏ hàng
+            $scope.cartCount += item.SOLUONG;
+            svProduct.getProduct(item.PRODUCTID).then(function (result) {// lấy thông tin chi tiết về 1 sản phầm có PRODUCTID
+                $scope.cartPrice += result.data[0].GIABAN;
+            }, function (err) {
+                console.log(err);
+            });
+        })
+    }, function (err) {
+        console.log(err);
+    });
 
+    $scope.addToCart = function (product) {
+        console.log(product);
+        $scope.cartCount = $scope.cartCount + 1;
+        svProduct.addToCart(product.ID).then(function (result) {
+            
+        }, function (err) {
+            console.log(err);
+        });
+        //document.getElementById('count-item').textContent = ' '+ $scope.cartCount;
+        $scope.cartPrice += product.GIABAN;
+        //document.getElementById('cart_price').textContent = ' '+ $scope.cartPrice;
+    }
 }

@@ -147,7 +147,7 @@ function deleteproduct(res, ID) {
 
 function addToCart(res, username, productID) {
     connection.query(`SELECT * FROM ${configValues.tbl_giohang}  WHERE USERNAME='${username}'`
-        + ` AND PRODUCTID=${productID}`, function (err, result, fields) {
+        + ` AND PRODUCTID=${productID} AND DABAN=0`, function (err, result, fields) {
             if (err) {
                 console.log("ERROR", err);
                 res.status(404).send(err);
@@ -156,28 +156,22 @@ function addToCart(res, username, productID) {
                 if (result.length > 0) {
                     var SOLUONG = result[0].SOLUONG + 1;
                     connection.query(`UPDATE ${configValues.tbl_giohang}`
-                        + ` SET SOLUONG=${SOLUONG} WHERE USERNAME='${username}' AND PRODUCTID=${productID}`, function (err, result, fields) {
+                        + ` SET SOLUONG=${SOLUONG} WHERE USERNAME='${username}' AND PRODUCTID=${productID} AND DABAN=0`, function (err, result, fields) {
                             if (err) {
                                 res.status(404).send(err);
-                                console.log("Error to gio hang ", productID);
                             } else {
                                 //res.redirect("Governance");
-                                console.log("Inserted to gio hang ", productID);
                             }
                         });
-                    console.log("CO", result);
                 } else {
                     connection.query(`INSERT INTO  ${configValues.tbl_giohang}`
                         + ` (USERNAME,PRODUCTID,SOLUONG) VALUES ('${username}', ${productID}, 1)`, function (err, result, fields) {
                             if (err) {
                                 res.status(404).send(err);
-                                console.log("Error to gio hang ", productID);
                             } else {
                                 //res.redirect("Governance");
-                                console.log("Inserted to gio hang ", productID);
                             }
                         });
-                    console.log("KHONG", result);
                 }
             }
         });

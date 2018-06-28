@@ -17,5 +17,14 @@ app.factory('svProduct', ['$http', function ($http) {
         getSameTypeProducts: function (LOAI) {
             return $http.get('/api/products/sameTo/' + LOAI);
         },
+        addToCart: function (productID) {
+            return $http.post('/api/cart/add/'+ productID);
+        },
+        getCartProducts: function () {
+            return $http.get('/api/cart/');
+        },
+        getProduct: function (PRODUCTID) {
+            return $http.get('/api/product/' + PRODUCTID);
+        }
     }
 }])

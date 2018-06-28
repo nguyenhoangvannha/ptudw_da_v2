@@ -9,6 +9,12 @@ app.factory('svShop', ['$http', function ($http) {
         },
         getTypes: function () {
             return $http.get('/api/types');
+        },
+        getCartProducts: function () {
+            return $http.get('/api/cart/');
+        },
+        getProduct: function (PRODUCTID) {
+            return $http.get('/api/product/' + PRODUCTID);
         }
     };
 }]);

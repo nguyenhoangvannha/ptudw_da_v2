@@ -98,7 +98,7 @@
 
                                     <div class="product_price">{{product.GIABAN}} $</div>
                                     <div class="button_container">
-                                        <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>
+                                        <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" ng-click="addToCart(product);" style="color: white" role="button">Thêm vào giỏ hàng</a>
                                     </div>
 
                                 </form>
@@ -324,8 +324,8 @@
                     });
                     setTimeout(function () {
                         $(document).find('.img-fly').remove();
-                        var citem = parseInt(cart.find('#count-item').data('count')) + 1;
-                        cart.find('#count-item').text(citem).data('count', citem);
+                        // var citem = parseInt(cart.find('#count-item').data('count')) + 1;
+                        // cart.find('#count-item').text(citem).data('count', citem);
                     }, 1000);
                 }, 500);
             });

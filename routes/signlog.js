@@ -84,7 +84,7 @@ router.get('/logout', urlencodedParser, (req, res) => {
 
 	req.session.isLogged = false;
 	req.session.username = null;
-	res.redirect('/signlog');
+	res.redirect('/');
 });
 
 router.get('/profile/:id', (req, res) => {

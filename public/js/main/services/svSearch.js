@@ -6,6 +6,15 @@ app.factory('svSearch', ['$http', function ($http) {
         },
         searchProducts: function (KEY) {
             return $http.get('/api/search/' + KEY);
+        },
+        addToCart: function (productID) {
+            return $http.post('/api/cart/add/'+ productID);
+        },
+        getCartProducts: function () {
+            return $http.get('/api/cart/');
+        },
+        getProduct: function (PRODUCTID) {
+            return $http.get('/api/product/' + PRODUCTID);
         }
     };
 }]);

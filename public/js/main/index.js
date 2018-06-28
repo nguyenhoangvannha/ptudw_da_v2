@@ -22,12 +22,15 @@ app.controller('indexController', ['$scope', 'svIndex', function ($scope, svInde
 
     svIndex.getProducts().then(function (result) {
         $scope.products = result.data;
-        $scope.newProducts = $scope.products.reverse();
-        $scope.hotProducts = $scope.products;
+        $scope.newProducts = result.data.slice();
+        $scope.hotProducts = result.data.slice();
+        $scope.viewProducts = result.data.slice();
         $scope.hotProducts.sort(compareByBuyDes);
-        $scope.viewProducts = $scope.products;
+        $scope.newProducts.reverse();
         $scope.viewProducts.sort(compareByViewDes);
-        
+        console.log($scope.newProducts);
+        console.log($scope.hotProducts);
+        console.log($scope.viewProducts);
     }, function (err) {
         console.log(err);
     });

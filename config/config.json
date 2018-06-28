@@ -2,7 +2,7 @@
     "host":"localhost",
     "username":"root",
     "password":"",
-    "database":"linhkienfitdb",
+    "database":"xehoifitdb",
     "tbl_sanpham":"tbl_sanpham",
     "tbl_nguoidung":"tbl_nguoidung",
     "tbl_giohang":"tbl_giohang"

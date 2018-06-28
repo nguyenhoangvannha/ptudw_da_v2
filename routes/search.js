@@ -4,6 +4,6 @@ router.get('/', function (req, res, next) {
     res.render('search');
 });
 router.get('/:KEY', function (req, res, next) {
-    res.render('product');
+    res.render('search');
 });
 module.exports = router;

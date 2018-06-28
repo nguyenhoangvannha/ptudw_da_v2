@@ -40,6 +40,26 @@ function getProducts(res) {
         }
     });
 }
+function searchProducts(res, KEY) {
+    connection.query(`SELECT * FROM ${configValues.tbl_sanpham}`, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send([]);
+        } else {
+            var kq = [];
+            result.forEach(function (e) {
+                var str = e.TEN +e.NHASANXUAT + e.XUATSU + e.LOAI;
+                KEY = KEY.trim().toLowerCase();
+                str = str.trim().toLowerCase();
+                if(str.includes(KEY)){
+                    kq.push(e);
+                }
+            });
+            res.send(kq);
+        }
+    });
+}
+
 function getSameTypeProducts(res, LOAI) {
     connection.query(`SELECT * FROM ${configValues.tbl_sanpham} WHERE LOAI = '${LOAI}'`, function (err, result, fields) {
         if (err) {
@@ -104,7 +124,7 @@ router.get('/product/:ID', function (req, res, next) {
     getProduct(res, req.params.ID);
 })
 router.get('/search/:KEY', function (req, res, next) {
-    searchProducts(res);
+    searchProducts(res, req.params.KEY);
 })
 router.get('/products/sameTo/:LOAI', function (req, res, next) {
     getSameTypeProducts(res, req.params.LOAI);
@@ -113,5 +133,7 @@ router.post('/view', jsonParser, function (req, res) {
     //console.log('BODY',req.body.productID);
     postViewProduct(res, req.body.productID);
 })
+
+
 
 module.exports = router;

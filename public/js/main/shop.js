@@ -16,10 +16,39 @@ function ShopCtrl($scope, svShop) {
         return array;
     }
     $scope.products = [];
+    $scope.currentProducts = [];
     svShop.getProducts().then(function (result) {
        $scope.products = result.data;
+       $scope.currentProducts = $scope.products;
        //shuffle($scope.products);
     }, function (err) {
         console.log(err);
     });
+    $scope.companies = [];
+    svShop.getCompanies().then(function (result) {
+        result.data.forEach(element => {
+            if (element.NHASANXUAT != 'undefined') {
+                $scope.companies.push(element);
+            }
+        });
+    });
+    $scope.types = [];
+    svShop.getTypes().then(function (result) {
+        result.data.forEach(element => {
+            if (element.LOAI != 'undefined') {
+                $scope.types.push(element);
+            }
+        });
+    });
+    $scope.companyClick = function (company) {
+        console.log("cpn",company);
+        var temp = [];
+        $scope.products.forEach(function (item) {
+            if(item.NHASANXUAT == company){
+                temp.push(item);
+            }
+        });
+        $scope.currentProducts = temp;
+        console.log($scope.currentProducts);
+    };
 }

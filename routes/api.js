@@ -91,6 +91,17 @@ function getCompanies(res) {
         }
     });
 }
+function getTypes(res) {
+    var sql = `SELECT LOAI FROM ${configValues.tbl_sanpham} GROUP BY LOAI HAVING count(*) > 0`;
+    connection.query(sql, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send([]);
+        } else {
+            res.send(result);
+        }
+    });
+}
 function postViewProduct(res, ID) {
     var SOLUOTXEM;
     connection.query(`SELECT * FROM ${configValues.tbl_sanpham}  WHERE ID=${ID}`, function (err, result, fields) {
@@ -119,6 +130,9 @@ router.get('/products/:COMPANY', function (req, res, next) {
 })
 router.get('/companies', function (req, res, next) {
     getCompanies(res);
+})
+router.get('/types', function (req, res, next) {
+    getTypes(res);
 })
 router.get('/product/:ID', function (req, res, next) {
     getProduct(res, req.params.ID);

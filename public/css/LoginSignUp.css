@@ -304,7 +304,7 @@ transition: all 0.5s;
 }
 
   
-.cont_form_sign_up > input {
+.cont_form_sign_up > form > input {
 text-align: left;
   padding: 15px 5px;
 margin-left: 10px;
@@ -321,7 +321,7 @@ font-weight: 400;
 }
 
 
-.cont_form_login > input {
+.cont_form_login > form > input {
   padding: 15px 5px;
 margin-left: 10px;
 margin-top: 20px;

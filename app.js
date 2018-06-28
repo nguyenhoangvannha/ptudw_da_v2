@@ -11,6 +11,7 @@ var productRouter = require('./routes/product');
 var shopRouter = require('./routes/shop');
 var searchRouter = require('./routes/search');
 var GovernanceRouter = require('./routes/Governance');
+var addRouter = require('./routes/add');
 //////////////Nhân///////////////////////////
 var signlogRouter = require('./routes/signlog');
 var session = require('express-session');
@@ -66,6 +67,7 @@ app.use('/product', productRouter);
 app.use('/shop', shopRouter);
 app.use('/search',searchRouter);
 app.use('/Governance',GovernanceRouter);
+app.use('/add',addRouter);
 app.use('/signlog', signlogRouter);
 app.listen(port, function () {
   console.log('App listeing on port', port);

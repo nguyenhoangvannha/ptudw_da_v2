@@ -40,4 +40,12 @@ app.controller('indexController', ['$scope', 'svIndex', function ($scope, svInde
             }
         });
     });
+    $scope.cartCount = 0;
+    $scope.addToCart = function (product) {
+        svIndex.addToCart(product.ID).then(function (result) {
+            $scope.cartCount = $scope.cartCount + 1;
+        }, function (err) {
+            console.log(err);
+        });
+    }
 }]);

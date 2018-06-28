@@ -28,9 +28,6 @@ app.controller('indexController', ['$scope', 'svIndex', function ($scope, svInde
         $scope.hotProducts.sort(compareByBuyDes);
         $scope.newProducts.reverse();
         $scope.viewProducts.sort(compareByViewDes);
-        console.log($scope.newProducts);
-        console.log($scope.hotProducts);
-        console.log($scope.viewProducts);
     }, function (err) {
         console.log(err);
     });

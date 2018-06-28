@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+        <form action="add" method="POST" role="form" enctype="multipart/form-data">
+            <legend>Thêm Sản Phẩm</legend>
+        
+            <div class="form-group">
+                <label for="">ID</label>
+                <input type="text" class="form-control" id="id" name="id">
+            </div>
+
+            <div class="form-group">
+                <label for="">TÊN</label>
+                <input type="text" class="form-control" id="ten" name="ten">
+            </div>
+            <div class="form-group">
+                <label for="">HÌNH ẢNH</label>
+                <input type="file" class="form-control" id="hinh" name="hinh">
+            </div>
+            <div class="form-group">
+                <label for="">GIÁ</label>
+                <input type="text" class="form-control" id="gia" name="gia">
+            </div>
+            <div class="form-group">
+                <label for="">SỐ LƯỢT XEM</label>
+                <input type="text" class="form-control" id="luotxem" name="luotxem">
+            </div>
+            <div class="form-group">
+                <label for="">SỐ LƯỢT BÁN</label>
+                <input type="text" class="form-control" id="luotban" name="luotban">
+            </div>
+            <div class="form-group">
+                <label for="">LOẠI</label>
+                <input type="text" class="form-control" id="loai" name="loai">
+            </div>
+            <div class="form-group">
+                <label for="">NHÀ SẢN XUẤT</label>
+                <input type="text" class="form-control" id="nhasanxuat" name="nhasanxuat">
+            </div>
+            <div class="form-group">
+                <label for="">XUẤT XỨ</label>
+                <input type="text" class="form-control" id="xuatxu" name="xuatxu">
+            </div>
+            <div class="form-group">
+                <label for="">MÔ TẢ</label>
+                <input type="text" class="form-control" id="mota" name="mota">
+            </div>
+        
+            
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+
+
+</body>
+</html>

@@ -46,12 +46,23 @@
 									<div class="user_icon">
 										<img src="assets/images/icon/user.svg" alt="">
 									</div>
-									<div>
-										<a href="SignLog">Đăng ký</a>
-									</div>
-									<div>
-										<a href="SignLog">Đăng nhập</a>
-									</div>
+									<% if (isLogged)
+										{ %>
+											<div><%=username%></div>
+											<div>
+												<a href="signlog/logout">Đăng xuất</a>
+											</div>
+										<% }
+										else
+										{ %>
+											<div>
+												<a href="/signlog">Đăng ký</a>
+											</div>
+											<div>
+												<a href="/signlog">Đăng nhập</a>
+											</div>
+										<% }
+										%>
 								</div>
 							</div>
 						</div>

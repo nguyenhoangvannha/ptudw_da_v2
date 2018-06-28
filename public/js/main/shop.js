@@ -41,7 +41,6 @@ function ShopCtrl($scope, svShop) {
         });
     });
     $scope.companyClick = function (company) {
-        console.log("cpn",company);
         var temp = [];
         $scope.products.forEach(function (item) {
             if(item.NHASANXUAT == company){
@@ -49,6 +48,14 @@ function ShopCtrl($scope, svShop) {
             }
         });
         $scope.currentProducts = temp;
-        console.log($scope.currentProducts);
+    };
+    $scope.typeClick = function (type) {
+        var temp = [];
+        $scope.products.forEach(function (item) {
+            if(item.LOAI == type){
+                temp.push(item);
+            }
+        });
+        $scope.currentProducts = temp;
     };
 }

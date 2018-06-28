@@ -22,7 +22,10 @@
 							<% if (isLogged)
 										{ %>
 								<div>
-									<%=username%>
+									<a href="/signlog/profile/<%=username%>">
+										<%=username%>
+									</a>
+
 								</div>
 								<div>
 									<a href="signlog/logout">Đăng xuất</a>

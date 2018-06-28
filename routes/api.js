@@ -120,7 +120,19 @@ function postViewProduct(res, ID) {
         }
     });
 
+}
 
+function deleteproduct(res, ID){
+    connection.query(`DELETE FROM ${configValues.tbl_sanpham}  WHERE ID=${ID}`, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send(err);
+        } else {
+            //res.redirect("Governance");
+            console.log("Deleted ", ID);
+            getProducts(res);
+        }
+    });
 }
 router.get('/products', function (req, res, next) {
     getProducts(res);
@@ -146,6 +158,9 @@ router.get('/products/sameTo/:LOAI', function (req, res, next) {
 router.post('/view', jsonParser, function (req, res) {
     //console.log('BODY',req.body.productID);
     postViewProduct(res, req.body.productID);
+})
+router.post('/delete/:ID',function(req, res){ 
+    deleteproduct(res,req.params.ID);
 })
 
 

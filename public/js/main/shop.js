@@ -3,7 +3,7 @@ app.controller('shopController',['$scope', 'svShop', ShopCtrl]);
 
 function ShopCtrl($scope, svShop) {
     // var url = $location.absUrl().split('/');
-    var companyName = window.location.href.split('/')[4];
+    var key = window.location.href.split('/')[4];
     function shuffle(array) {
         var m = array.length, t, i;
         // Chừng nào vẫn còn phần tử chưa được xáo trộn thì vẫn tiếp tục
@@ -21,10 +21,14 @@ function ShopCtrl($scope, svShop) {
     $scope.currentProducts = [];
     svShop.getProducts().then(function (result) {
        $scope.products = result.data;
-       if(companyName != undefined){
-        $scope.companyClick(companyName);
-       } else {
-        $scope.currentProducts = $scope.products;
+       if(key != undefined && !isNaN(key)){
+        $scope.typeClick(key);
+       } else{
+        if(key != undefined){
+            $scope.companyClick(key);
+           } else {
+            $scope.currentProducts = $scope.products;
+           }
        }
        //shuffle($scope.products);
     }, function (err) {
@@ -57,6 +61,7 @@ function ShopCtrl($scope, svShop) {
         $scope.currentProducts = temp;
     };
     $scope.typeClick = function (type) {
+        window.history.pushState('page2', 'Title', '/shop/' + type);
         var temp = [];
         $scope.products.forEach(function (item) {
             if(item.LOAI == type){

@@ -1,3 +1,4 @@
+
 <!-- Header Main -->
 
 <div class="header_main">
@@ -19,37 +20,35 @@
 					<div class="header_search_content">
 						<div class="header_search_form_container">
 							<form action="search" method="GET" class="header_search_form clearfix">
-								<input id='searchKey' name="key" type="text" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
+								<input id='searchKey' name = "key" type="text" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
 								<div class="custom_dropdown">
 									<div class="custom_dropdown_list">
 										<span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
 										<i class="fas fa-chevron-down"></i>
 										<ul id="dropDown01" class="custom_list clc">
-											<li onclick="location.href='/search';">
-												<a class="clc" href="#">Tất cả danh mục</a>
+											
+											<li  onclick="location.href='/search?key=audi';">
+												<a class="clc"  href="">Audi</a>
 											</li>
-											<li onclick="location.href='/search';">
-												<a class="clc" href="#">Audi</a>
+											<li onclick="location.href='/search?key=bmw';">
+												<a class="clc" href="">BMW</a>
 											</li>
-											<li onclick="location.href='/search';">
-												<a class="clc" href="#">BMW</a>
-											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=chevrolet';">
 												<a class="clc" href="#">Chevrolet</a>
 											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=ford';">
 												<a class="clc" href="#">Ford</a>
 											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=lexus';">
 												<a class="clc" href="#">Lexus</a>
 											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=mercedes-benz';">
 												<a class="clc" href="#">Mercedes-Benz</a>
 											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=nissan';">
 												<a class="clc" href="#">Nissan</a>
 											</li>
-											<li onclick="location.href='/search';">
+											<li onclick="location.href='/search?key=toyota';">
 												<a class="clc" href="#">Toyota</a>
 											</li>
 										</ul>
@@ -126,49 +125,49 @@
 										</a> -->
 									<!-- ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Audi">Audi
+										<a href="/company/Audi">Audi
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/BMW">BMW
+										<a href="/company/BMW">BMW
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Chevrolet">Chevrolet
+										<a href="/company/Chevrolet">Chevrolet
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Ford">Ford
+										<a href="/company/Ford">Ford
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Lexus">Lexus
+										<a href="/company/Lexus">Lexus
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Mercedes-Benz">Mercedes-Benz
+										<a href="/company/Mercedes-Benz">Mercedes-Benz
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Nissan">Nissan
+										<a href="/company/Nissan">Nissan
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<!-- end ngRepeat: company in companies -->
 									<li class="ng-scope">
-										<a href="/shop/Toyota">Toyota
+										<a href="/company/Toyota">Toyota
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
@@ -182,22 +181,32 @@
 								</a>
 								<ul id="list02">
 									<li>
-										<a href="/shop/2019">Năm 2019
+										<a href="shop">Năm 2018
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<li>
-										<a href="/shop/2018">Năm 2018
+										<a href="shop">Năm 2017
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<li>
-										<a href="/shop/2017">Năm 2017
+										<a href="shop">Năm 2016
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>
 									<li>
-										<a href="/shop/2016">Năm 2016
+										<a href="shop">Năm 2015
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<li>
+										<a href="shop">Năm 2014
+											<i class="fas fa-chevron-down"></i>
+										</a>
+									</li>
+									<li>
+										<a href="shop">Năm 2013
 											<i class="fas fa-chevron-down"></i>
 										</a>
 									</li>

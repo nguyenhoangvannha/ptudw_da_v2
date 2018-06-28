@@ -2,6 +2,8 @@ var app = angular.module('app.shop',[]);
 app.controller('shopController',['$scope', 'svShop', ShopCtrl]);
 
 function ShopCtrl($scope, svShop) {
+    // var url = $location.absUrl().split('/');
+    var companyName = window.location.href.split('/')[4];
     function shuffle(array) {
         var m = array.length, t, i;
         // Chừng nào vẫn còn phần tử chưa được xáo trộn thì vẫn tiếp tục
@@ -19,7 +21,11 @@ function ShopCtrl($scope, svShop) {
     $scope.currentProducts = [];
     svShop.getProducts().then(function (result) {
        $scope.products = result.data;
-       $scope.currentProducts = $scope.products;
+       if(companyName != undefined){
+        $scope.companyClick(companyName);
+       } else {
+        $scope.currentProducts = $scope.products;
+       }
        //shuffle($scope.products);
     }, function (err) {
         console.log(err);
@@ -41,9 +47,10 @@ function ShopCtrl($scope, svShop) {
         });
     });
     $scope.companyClick = function (company) {
+        window.history.pushState('page2', 'Title', '/shop/' + company);
         var temp = [];
         $scope.products.forEach(function (item) {
-            if(item.NHASANXUAT == company){
+            if(item.NHASANXUAT.toLowerCase() == company.toLowerCase()){
                 temp.push(item);
             }
         });

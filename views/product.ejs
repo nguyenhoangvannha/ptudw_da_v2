@@ -65,7 +65,7 @@
                             </div>
                             <div class="product_text">
                                 <span>
-                                    <!-- {{product.MOTA.substring(0,100)}}... -->
+                                    {{product.MOTA.substring(0,360)}}...
                                 </span>
                             </div>
                             <div class="order_info d-flex flex-row">
@@ -73,7 +73,7 @@
                                     <div class="clearfix" style="z-index: 1000;">
 
                                         <!-- Product Quantity -->
-                                        <div class="product_quantity clearfix">
+                                        <!-- <div class="product_quantity clearfix">
                                             <span>Số lượng: </span>
                                             <input id="quantity_input" type="text" pattern="[1-10]*" value="1">
                                             <div class="quantity_buttons">
@@ -84,15 +84,15 @@
                                                     <i class="fas fa-chevron-down"></i>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <!-- Product Color -->
-                                        <ul class="product_color">
+                                        <!-- <ul class="product_color">
                                             <li>
                                                 <span>Đã bán:  </span>
                                                 <span>0</span>
                                             </li>
-                                        </ul>
+                                        </ul> -->
 
                                     </div>
 
@@ -110,13 +110,13 @@
             </div>
         </div>
 
-        <div class="card" style="width: 85%; margin: auto;">
+        <!-- <div class="card" style="width: 85%; margin: auto;">
             <div class="card-body">
                 <h5 class="card-title">Mô tả sản phẩm</h5>
                 <p>{{product.MOTA}}</p>
             </div>
         </div>
-        <div style="margin-top: 30px"></div>
+        <div style="margin-top: 30px"></div> -->
         <div style="width: 85%; margin: auto;">
             <h3>Thông tin chi tiết</h3>
             <hr>
@@ -145,6 +145,10 @@
                     <th scope="row">Số lượt xem</th>
                     <td>{{product.SOLUOTXEM}}</td>
                 </tr>
+                <tr>
+                        <th scope="row">Số lượt bán</th>
+                        <td>{{product.SOLUOTBAN}}</td>
+                    </tr>
             </tbody>
         </table>
         <div style="margin-top: 50px">

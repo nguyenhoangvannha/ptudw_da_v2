@@ -106,11 +106,17 @@
                                                 <a href="/product/{{currentProducts[i].NHASANXUAT}}/{{currentProducts[i].ID}}" tabindex="0">{{currentProducts[i].TEN}}...</a>
                                             </div>
                                         </div>
+                                        <div class="product_extras">
+                                                <a href="javascript:void(0);" name="" id="" class="btn-buy" style="color: white" role="button" tabindex="0">
+                                                    <button class="product_cart_button btn btn-outline-primary" style="font-size: 12px" tabindex="0" ng-click="addToCart(currentProducts[i]);">Thêm vào giỏ hàng</button>
+                                                </a>
+                                            </div>
                                     </div>
                                     <ul class="product_marks ">
                                         <li class="product_mark product_discount ">-25%</li>
                                         <li class="product_mark product_new "> + mark + </li>
                                     </ul>
+
                                 </div>
                             </div>
 
@@ -172,6 +178,36 @@
     <script src="/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.js "></script>
     <script src="/assets/plugins/parallax-js-master/parallax.min.js "></script>
     <script src="/assets/js/shop_custom.js "></script>
+    <script>
+            $(document).on('click', '.btn-buy', function (e) {
+                e.preventDefault();
+                var parent = $(this).parents('.product_image');
+                var cart = $(document).find('#cart-shop');
+                src = parent.find('img').attr('src');
+                var parTop = parent.offset().top;
+                var parLeft = parent.offset().left;
+
+                $('<img />', {
+                    class: 'img-fly',
+                    src: src,
+                }).appendTo('body').css({
+                    'top': parTop,
+                    'left': parseInt(parLeft) + parseInt(parent.width()) - 50
+                });
+
+                setTimeout(function () {
+                    $(document).find('.img-fly').css({
+                        'top': cart.offset().top,
+                        'left': cart.offset().left
+                    });
+                    setTimeout(function () {
+                        $(document).find('.img-fly').remove();
+                        // var citem = parseInt(cart.find('#count-item').data('count')) + 1;
+                        // cart.find('#count-item').text(citem).data('count', citem);
+                    }, 1000);
+                }, 500);
+            });
+        </script>
 </body>
 
 </html>

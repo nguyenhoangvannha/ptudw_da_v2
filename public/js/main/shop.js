@@ -88,5 +88,16 @@ function ShopCtrl($scope, svShop) {
     }, function (err) {
         console.log(err);
     });
-
+    $scope.addToCart = function (product) {
+        console.log(product);
+        $scope.cartCount = $scope.cartCount + 1;
+        svShop.addToCart(product.ID).then(function (result) {
+            
+        }, function (err) {
+            console.log(err);
+        });
+        //document.getElementById('count-item').textContent = ' '+ $scope.cartCount;
+        $scope.cartPrice += product.GIABAN;
+        //document.getElementById('cart_price').textContent = ' '+ $scope.cartPrice;
+    }
 }

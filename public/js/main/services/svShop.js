@@ -15,6 +15,9 @@ app.factory('svShop', ['$http', function ($http) {
         },
         getProduct: function (PRODUCTID) {
             return $http.get('/api/product/' + PRODUCTID);
+        },
+        addToCart: function (productID) {
+            return $http.post('/api/cart/add/'+ productID);
         }
     };
 }]);

@@ -40,6 +40,16 @@ function getProducts(res) {
         }
     });
 }
+function getCartProducts(res, USERNAME) {
+    connection.query(`SELECT * FROM ${configValues.tbl_giohang} WHERE USERNAME = '${USERNAME}'`, function (err, result, fields) {
+        if (err) {
+            console.log(err);
+            res.status(404).send([]);
+        } else {
+            res.send(result);
+        }
+    });
+}
 function searchProducts(res, KEY) {
     connection.query(`SELECT * FROM ${configValues.tbl_sanpham}`, function (err, result, fields) {
         if (err) {
@@ -48,10 +58,10 @@ function searchProducts(res, KEY) {
         } else {
             var kq = [];
             result.forEach(function (e) {
-                var str = e.TEN +e.NHASANXUAT + e.XUATSU + e.LOAI;
+                var str = e.TEN + e.NHASANXUAT + e.XUATSU + e.LOAI;
                 KEY = KEY.trim().toLowerCase();
                 str = str.trim().toLowerCase();
-                if(str.includes(KEY)){
+                if (str.includes(KEY)) {
                     kq.push(e);
                 }
             });
@@ -122,7 +132,7 @@ function postViewProduct(res, ID) {
 
 }
 
-function deleteproduct(res, ID){
+function deleteproduct(res, ID) {
     connection.query(`DELETE FROM ${configValues.tbl_sanpham}  WHERE ID=${ID}`, function (err, result, fields) {
         if (err) {
             console.log(err);
@@ -133,6 +143,46 @@ function deleteproduct(res, ID){
             getProducts(res);
         }
     });
+}
+
+function addToCart(res, username, productID) {
+    connection.query(`SELECT * FROM ${configValues.tbl_giohang}  WHERE USERNAME='${username}'`
+        + ` AND PRODUCTID=${productID}`, function (err, result, fields) {
+            if (err) {
+                console.log("ERROR", err);
+                res.status(404).send(err);
+            } else {
+                //res.redirect("Governance");
+                if (result.length > 0) {
+                    var SOLUONG = result[0].SOLUONG + 1;
+                    connection.query(`UPDATE ${configValues.tbl_giohang}`
+                        + ` SET SOLUONG=${SOLUONG} WHERE USERNAME='${username}' AND PRODUCTID=${productID}`, function (err, result, fields) {
+                            if (err) {
+                                res.status(404).send(err);
+                                console.log("Error to gio hang ", productID);
+                            } else {
+                                //res.redirect("Governance");
+                                console.log("Inserted to gio hang ", productID);
+                            }
+                        });
+                    console.log("CO", result);
+                } else {
+                    connection.query(`INSERT INTO  ${configValues.tbl_giohang}`
+                        + ` (USERNAME,PRODUCTID,SOLUONG) VALUES ('${username}', ${productID}, 1)`, function (err, result, fields) {
+                            if (err) {
+                                res.status(404).send(err);
+                                console.log("Error to gio hang ", productID);
+                            } else {
+                                //res.redirect("Governance");
+                                console.log("Inserted to gio hang ", productID);
+                            }
+                        });
+                    console.log("KHONG", result);
+                }
+            }
+        });
+
+
 }
 router.get('/products', function (req, res, next) {
     getProducts(res);
@@ -155,12 +205,22 @@ router.get('/search/:KEY', function (req, res, next) {
 router.get('/products/sameTo/:LOAI', function (req, res, next) {
     getSameTypeProducts(res, req.params.LOAI);
 })
+router.get('/cart', function (req, res, next) {
+    getCartProducts(res, req.session.username);
+})
 router.post('/view', jsonParser, function (req, res) {
     //console.log('BODY',req.body.productID);
     postViewProduct(res, req.body.productID);
 })
-router.post('/delete/:ID',function(req, res){ 
-    deleteproduct(res,req.params.ID);
+router.post('/cart/add/:PRODUCTID', jsonParser, function (req, res) {
+    //console.log('BODY',req.body.productID);
+    if (req.session.isLogged) {
+        addToCart(res, req.session.username, req.params.PRODUCTID);
+    }
+
+})
+router.post('/delete/:ID', function (req, res) {
+    deleteproduct(res, req.params.ID);
 })
 
 

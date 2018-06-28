@@ -6,6 +6,9 @@ app.factory('svIndex',['$http', function ($http) {
         },
         getCompanies: function () {
             return $http.get('/api/companies');
+        },
+        addToCart: function (productID) {
+            return $http.post('/api/cart/add/'+ productID);
         }
     };
 }]);

@@ -21,43 +21,7 @@
 <body ng-controller="searchController">
     <div class="super_container">
 
-        <!-- Header -->
-        <header class="header">
-
-            <!-- Top Bar -->
-
-            <div class="top_bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col d-flex flex-row">
-                            <div class="top_bar_contact_item">
-                                <div class="top_bar_icon">
-                                    <img src="/assets/images/icon/phone.png" alt="">
-                                </div>+84 168 888 9316</div>
-                            <div class="top_bar_contact_item">
-                                <div class="top_bar_icon">
-                                    <img src="/assets/images/icon/mail.png" alt="">
-                                </div>
-                                <a href="mailto:fastsales@gmail.com">admin@gmail.com</a>
-                            </div>
-                            <div class="top_bar_content ml-auto">
-                                <div class="top_bar_user">
-                                    <div class="user_icon">
-                                        <img src="/assets/images/icon/user.svg" alt="">
-                                    </div>
-                                    <div>
-                                        <a href="SignLog">Đăng ký</a>
-                                    </div>
-                                    <div>
-                                        <a href="SignLog">Đăng nhập</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        
             <!-- Header Main -->
             <%- include header.ejs %>
         </header>
@@ -160,21 +124,21 @@
                                 </div>   
                             </div>
                                 <!-- Item -->
-                                <div class="" ng-repeat="i in [] | range:30">
+                                <div class="" ng-repeat="item in searchResult">
                                     <!-- Product item -->
                                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                                             <div class="card-body d-flex flex-column align-items-start">
-                                                <strong class="d-inline-block mb-2 text-primary">{{searchResult[i].TEN.substring(0,30)}}...</strong>
+                                                <strong class="d-inline-block mb-2 text-primary">{{item.TEN.substring(0,30)}}...</strong>
                                                     <h3 class="mb-0">
-                                                        <a class="text-dark" href="#">{{searchResult[i].GIA}}</a>
+                                                        <a class="text-dark" href="#">{{item.GIA}}</a>
                                                     </h3>
                                                 <div class="mb-1 text-muted">
-                                                    Năm Sản Xuất {{searchResult[i].LOAI}}
+                                                    Năm Sản Xuất {{item.LOAI}}
                                                 </div>
-                                                <p style="width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{searchResult[i].MOTA}}</p>
-                                                <a href="/product/{{searchResult[i].NHASANXUAT}}/{{searchResult[i].ID}}">Chi tiết</a>
+                                                <p style="width: 400px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{item.MOTA}}</p>
+                                                <a href="/product/{{item.NHASANXUAT}}/{{item.ID}}">Chi tiết</a>
                                             </div>
-                                            <img class="card-img-right flex-auto d-none d-md-block"  alt="{{searchResult[i].TEN.substring(0,16)}}..." style="width: 220px; height: 170px;" src="/assets/carsdata{{searchResult[i].HINHANH}}" data-holder-rendered="true">
+                                            <img class="card-img-right flex-auto d-none d-md-block"  alt="{{item.TEN.substring(0,16)}}..." style="width: 220px; height: 170px;" src="/assets/carsdata{{item.HINHANH}}" data-holder-rendered="true">
         
                                             <div class="product_extras">
                                                 <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" style="color: white" role="button">Thêm vào giỏ hàng</a>

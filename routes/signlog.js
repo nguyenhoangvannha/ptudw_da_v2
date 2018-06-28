@@ -28,10 +28,25 @@ router.get('/success',(req,res) =>{
 	res.redirect('/');
 });
 
+router.get('/admin',(req,res) =>{
+	var log=req.session.isLogged;
+	var name=req.session.username;
+	var admin = false;
+	var vm = {
+		isAdmin: admin,
+		isLogged: log,
+		username: name
+	};
+	if (name==='ThienNhan') admin=true;
+	if (admin===true) res.render('admin', vm);
+	else res.redirect('/');
+});
+
 router.post('/success', urlencodedParser, (req, res) => {
 	var log=req.session.isLogged;
 	var name=req.session.username;
 	var admin = false;
+	if (name==='ThienNhan') admin=true;
 	var vm = {
 		isAdmin: admin,
 		layout: true,
@@ -58,10 +73,12 @@ router.post('/', urlencodedParser, (req, res) => {
 	accountRepo.login(user).then(rows => {
 		if (rows.length > 0) {
             // user = rows[0];
-
+			var admin = false;
             req.session.isLogged = true;
             req.session.username = user.username;
-            res.redirect('/');
+			if (req.session.username==='ThienNhan') admin=true;
+            if(admin===true) res.redirect('signlog/admin');
+            else res.redirect('/');
 
         } else {
         	var log=req.session.isLogged;

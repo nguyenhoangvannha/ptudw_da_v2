@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `nguoidung`
 --
 
-DROP TABLE IF EXISTS `nguoidung`;
+DROP TABLE IF EXISTS `tbl_nguoidung`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `nguoidung` (
+CREATE TABLE `tbl_nguoidung` (
   `USERID` int NOT NULL AUTO_INCREMENT,
 	`EMAIL` VARCHAR(100) DEFAULT NULL,
   `USERNAME` varchar(45) DEFAULT NULL,
@@ -48,9 +48,9 @@ CREATE TABLE `nguoidung` (
 -- Dumping data for table `nguoidung`
 --
 
-LOCK TABLES `nguoidung` WRITE;
-/*!40000 ALTER TABLE `nguoidung` DISABLE KEYS */;
-/*!40000 ALTER TABLE `nguoidung` ENABLE KEYS */;
+LOCK TABLES `tbl_nguoidung` WRITE;
+/*!40000 ALTER TABLE `tbl_nguoidung` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_nguoidung` ENABLE KEYS */;
 UNLOCK TABLES;
 --
 -- Cấu trúc bảng cho bảng `tbl_sanpham`

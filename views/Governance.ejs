@@ -43,17 +43,18 @@
         </thead>
         <tbody>
         
-          <tr ng-repeat="i in [] | range:292">
-            <th scope="row">{{products[i].ID}}</th>
-            <td>{{products[i].TEN.substring(0,15)}}</td>
-            <td><img src="/assets/carsdata{{products[i].HINHANH}}" alt="" width="50" height="50"></td>
-            <td>{{products[i].GIABAN}}</td>
-            <td>{{products[i].SOLUOTXEM}}</td>
-            <td>{{products[i].SOLUOTBAN}}</td>
-            <td>{{products[i].LOAI}}</td>
-            <td>{{products[i].NHASANXUAT}}</td>
-            <td>{{products[i].XUATSU}}</td>
-            <td><a href="./Governance/edit/{{products[i].ID}}"><span class="fa fa-edit">EDIT</span></a> - <a href="./Governance/delete/{{products[i].ID}}"><span class="fa fas fa-trash-alt">DELETE</span></a> </td>
+          <tr ng-repeat="item in products">
+            <th scope="row">{{item.ID}}</th>
+            <td>{{item.TEN.substring(0,15)}}</td>
+            <td><img src="/assets/carsdata{{item.HINHANH}}" alt="" width="50" height="50"></td>
+            <td>{{item.GIABAN}}</td>
+            <td>{{item.SOLUOTXEM}}</td>
+            <td>{{item.SOLUOTBAN}}</td>
+            <td>{{item.LOAI}}</td>
+            <td>{{item.NHASANXUAT}}</td>
+            <td>{{item.XUATSU}}</td>
+            <td><a href="./Governance/edit/{{item.ID}}"><span class="fa fa-edit">EDIT</span></a> - <a href="">
+              <span class="fa fas fa-trash-alt" ng-click="deleteProduct(item.ID)">DELETE</span></a> </td>
           </tr>
           
         </tbody>

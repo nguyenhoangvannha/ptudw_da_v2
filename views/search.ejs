@@ -59,406 +59,7 @@
             </div>
 
             <!-- Header Main -->
-
-            <div class="header_main">
-                <div class="container">
-                    <div class="row">
-
-                        <!-- Logo -->
-                        <div class="col-lg-2 col-sm-3 col-3 order-1">
-                            <div class="logo_container">
-                                <div class="logo">
-                                    <a href="/">Xe hơi FIT</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Search -->
-                        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                            <div class="header_search">
-                                <div class="header_search_content">
-                                    <div class="header_search_form_container">
-                                        <form action="search" class="header_search_form clearfix">
-                                            <input type="search" required="required" class="header_search_input" placeholder="Tìm kiếm sản phẩm...">
-                                            <div class="custom_dropdown">
-                                                <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc">Tất cả danh mục</span>
-                                                    <i class="fas fa-chevron-down"></i>
-                                                    <ul id="dropDown01" class="custom_list clc">
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">Tất cả danh mục</a>
-                                                        </li>
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">HDD</a>
-                                                        </li>
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">Ổ cứng SSD Di Động</a>
-                                                        </li>
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">Ram Laptop, Desktop</a>
-                                                        </li>
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">SSD</a>
-                                                        </li>
-                                                        <li onclick="location.href=search.html;">
-                                                            <a class="clc" href="#">USB</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="header_search_button trans_300" value="Submit">
-                                                <img src="/assets/images/icon/search.png" alt="">
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Wishlist -->
-                        <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                            <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                                <!-- Cart -->
-                                <div class="cart" id="cart-shop">
-                                    <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                        <div class="cart_icon">
-                                            <img src="/assets/images/icon/cart.png" alt="">
-                                            <div class="cart_count">
-                                                <span id="count-item" data-count="0">0</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart_content">
-                                            <div class="cart_text">
-                                                <a href="cart.html">Giỏ hàng</a>
-                                            </div>
-                                            <div class="cart_price">$0</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Navigation -->
-
-            <nav class="main_nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="main_nav_content d-flex flex-row">
-                                <!-- Categories Menu -->
-
-                                <div class="cat_menu_container">
-                                    <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                                        <a href="/">
-                                            <div class="cat_menu_text">Trang chủ</div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Main Nav Menu -->
-
-                                <div class="main_nav_menu ml-auto">
-                                    <ul class="standard_dropdown main_nav_dropdown">
-                                        <li>
-                                            <a href="shop.html">Tất cả sản phẩm
-                                                <i class="fas fa-chevron-down"></i>
-                                            </a>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">Nhà sản xuất
-                                                <i class="fas fa-chevron-down"></i>
-                                            </a>
-                                            <ul id="list01">
-                                                <li ng-repeat="company in companies">
-                                                    <a href="company/{{company.NHASANXUAT}}">{{company.NHASANXUAT}}
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">Loại sản phẩm
-                                                <i class="fas fa-chevron-down"></i>
-                                            </a>
-                                            <ul id="list02">
-                                                <li>
-                                                    <a href="shop.html">Năm 2018
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Năm 2017
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Năm 2016
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Năm 2015
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Năm 2014
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="shop.html">Năm 2013
-                                                        <i class="fas fa-chevron-down"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-
-                                        <li>
-                                            <a href="contact.html">Liên hệ
-                                                <i class="fas fa-chevron-down"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <!-- Menu Trigger -->
-
-                                <div class="menu_trigger_container ml-auto">
-                                    <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
-                                        <div class="menu_burger">
-                                            <div class="menu_trigger_text">menu</div>
-                                            <div class="cat_burger menu_burger_inner">
-                                                <span></span>
-                                                <span></span>
-                                                <span></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Menu -->
-
-            <div class="page_menu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-
-                            <div class="page_menu_content">
-
-                                <div class="page_menu_search">
-                                    <form action="#">
-                                        <input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
-                                    </form>
-                                </div>
-                                <ul class="page_menu_nav">
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Language
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="page_menu_selection">
-                                            <li>
-                                                <a href="#">English
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Italian
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Spanish
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Japanese
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Currency
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="page_menu_selection">
-                                            <li>
-                                                <a href="#">US Dollar
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">EUR Euro
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">GBP British Pound
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">JPY Japanese Yen
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item">
-                                        <a href="#">Home
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Super Deals
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="page_menu_selection">
-                                            <li>
-                                                <a href="#">Super Deals
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li class="page_menu_item has-children">
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                                <ul class="page_menu_selection">
-                                                    <li>
-                                                        <a href="#">Menu Item
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Menu Item
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Menu Item
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Menu Item
-                                                            <i class="fa fa-angle-down"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Featured Brands
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="page_menu_selection">
-                                            <li>
-                                                <a href="#">Featured Brands
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Trending Styles
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="page_menu_selection">
-                                            <li>
-                                                <a href="#">Trending Styles
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Menu Item
-                                                    <i class="fa fa-angle-down"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item">
-                                        <a href="blog.html">blog
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page_menu_item">
-                                        <a href="contact.html">contact
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <div class="menu_contact">
-                                    <div class="menu_contact_item">
-                                        <div class="menu_contact_icon">
-                                            <img src="/assets/images/icon/phone_white.png" alt="">
-                                        </div>+38 068 005 3570</div>
-                                    <div class="menu_contact_item">
-                                        <div class="menu_contact_icon">
-                                            <img src="/assets/images/icon/mail_white.png" alt="">
-                                        </div>
-                                        <a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <%- include header.ejs %>
         </header>
 
         <!-- Home -->
@@ -478,14 +79,30 @@
                                     </a>
                                     <div class="collapse show" id="collapseExample">
                                         <ul id="listManufacture" class="list-group">
-                                            <li style="cursor: pointer;" class="list-group-item">Adata</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Intell</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Sandisk</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Samsung</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Kingston</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Westerm Digital</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Transcend</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Silicon power</li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=audi';">
+                                                <a class="clc"  href="">Audi</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=bmw';">
+                                                <a class="clc" href="">BMW</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=chevrolet';">
+                                                <a class="clc" href="#">Chevrolet</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=ford';">
+                                                <a class="clc" href="#">Ford</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=lexus';">
+                                                <a class="clc" href="#">Lexus</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=mercedes-benz';">
+                                                <a class="clc" href="#">Mercedes-Benz</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=nissan';">
+                                                <a class="clc" href="#">Nissan</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=toyota';">
+                                                <a class="clc" href="#">Toyota</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -502,16 +119,30 @@
                                     </a>
                                     <div class="collapse show" id="collapseExample2">
                                         <ul id="listType" class="list-group">
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2018</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2017</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2016</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2015</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2014</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2013</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2012</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2011</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2010</li>
-                                            <li style="cursor: pointer;" class="list-group-item">Năm 2009</li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2019';">
+                                                <a class="clc"  href="">2019</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2018';">
+                                                <a class="clc" href="">2018</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2017';">
+                                                <a class="clc" href="#">2017</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2016';">
+                                                <a class="clc" href="#">2016</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2015';">
+                                                <a class="clc" href="#">2015</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2014';">
+                                                <a class="clc" href="#">2014</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2013';">
+                                                <a class="clc" href="#">2013</a>
+                                            </li>
+                                            <li style="cursor: pointer;" class="list-group-item" onclick="location.href='/search?key=2012';">
+                                                <a class="clc" href="#">2012</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -525,11 +156,11 @@
                         <div class="shop_content">
                             <div class="shop_bar clearfix">
                                 <div id="productCount" class="shop_product_count">
-                                    <span>{{products.length}}</span> sản phẩm
+                                    <span>{{searchResult.length}}</span> sản phẩm
                                 </div>   
                             </div>
                                 <!-- Item -->
-                                <div class="" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+                                <div class="" ng-repeat="i in [] | range:30">
                                     <!-- Product item -->
                                         <div class="card flex-md-row mb-4 box-shadow h-md-250">
                                             <div class="card-body d-flex flex-column align-items-start">
@@ -656,34 +287,35 @@
     <script src="/assets/plugins/parallax-js-master/parallax.min.js "></script>
     <script src="/assets/js/shop_custom.js "></script>
     <script>
-            $(document).on('click', '.btn-buy', function (e) {
-                e.preventDefault();
-                var parent = $(this).parents('.arrivals_slider_item');
-                var cart = $(document).find('#cart-shop');
-                src = parent.find('img').attr('src');
-                var parTop = parent.offset().top;
-                var parLeft = parent.offset().left;
+            $(document).on('click','.btn-buy',function (e) {
+    		e.preventDefault();
+    		var parent = $(this).parents('.card' ,'.flex-md-row', '.mb-4 box-shadow', '.h-md-250');
+    		var cart = $(document).find('#cart-shop');
+        		src = parent.find('img').attr('src');
+        
+        	var parTop = parent.offset().top;
+        	var parLeft = parent.offset().left;
+    
+        	$('<img />', { 
+          		class: 'img-fly',
+          		src: src,
+        		}).appendTo('body').css({
+            		'top' : parTop,
+            		'left' : parseInt(parLeft) + parseInt(parent.width()) - 50
+        		});
 
-                $('<img />', {
-                    class: 'img-fly',
-                    src: src,
-                }).appendTo('body').css({
-                    'top': parTop,
-                    'left': parseInt(parLeft) + parseInt(parent.width()) - 50
-                });
-
-                setTimeout(function () {
-                    $(document).find('.img-fly').css({
-                        'top': cart.offset().top,
-                        'left': cart.offset().left
-                    });
-                    setTimeout(function () {
-                        $(document).find('.img-fly').remove();
-                        var citem = parseInt(cart.find('#count-item').data('count')) + 1;
-                        cart.find('#count-item').text(citem).data('count', citem);
-                    }, 1000);
-                }, 500);
-            });
+    		setTimeout(function(){
+        		$(document).find('.img-fly').css({
+        		'top' : cart.offset().top,
+        		'left' : cart.offset().left
+        	});
+        		setTimeout(function(){
+           		 $(document).find('.img-fly').remove();
+            		var citem = parseInt(cart.find('#count-item').data('count'))+1;
+            		cart.find('#count-item').text(citem).data('count',citem);
+        	},1000);	
+    		},500);
+		});
         </script>
 </body>
 

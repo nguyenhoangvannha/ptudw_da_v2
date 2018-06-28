@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+var productRepo = require('../repos/productRepo');
+
+
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -25,10 +28,31 @@ router.post('/',urlencodedParser, function(req,res){
         if (err) {
           res.send("LOI");
         }else{
-            res.send("ok");
+          if(req.file == undefined){
+            res.send("Ban chua chon file");
+          }else{
+            
+            productRepo.add(req.body).then(value => {
+              //var log=req.session.isLogged;
+              //var name=req.session.username;
+              //var admin = false;
+              //if(name==='ThienNhan') admin = true;
+              //var vm = {
+                  //isAdmin: admin,
+                  //layout: false,
+                  //showAlert: true,
+                 // isLogged: log,
+                 // username: name
+             // };
+              //res.render('add');
+          //}).catch(err => {
+              //res.end('fail');
+               res.redirect("/Governance");
+          });
+          }
+            
         }
     
-        // Everything went fine
       })
     
 });

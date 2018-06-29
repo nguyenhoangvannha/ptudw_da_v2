@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app.profile">
 
 <head>
 	<title>Đăng ký/ Đăng Nhập</title>
@@ -24,7 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/LoginSignUp.css">
 </head>
 
-<body>
+<body ng-controller="profileController">
 	<div class="super_container">
 
 		<!-- Header -->
@@ -200,11 +200,11 @@
 			</div>
 
 			<script src="/assets/js/jquery-3.3.1.min.js"></script>
+			<script src="/assets/js/popper.js"></script>
+			<script src="/assets/js/bootstrap.min.js"></script>
 			<script src="/assets/js/angular.min.js "></script>
-			<script src="/assets/js/main/index.js "></script>
-			<script src="/assets/js/main/services/svIndex.js "></script>
-			<script src="/assets/styles/bootstrap4/popper.js"></script>
-			<script src="/assets/styles/bootstrap4/bootstrap.min.js"></script>
+			<script src="/assets/js/main/profile.js "></script>
+			<script src="/assets/js/main/services/svProfile.js "></script>
 			<script src="/assets/plugins/greensock/TweenMax.min.js"></script>
 			<script src="/assets/plugins/greensock/TimelineMax.min.js"></script>
 			<script src="/assets/plugins/scrollmagic/ScrollMagic.min.js"></script>

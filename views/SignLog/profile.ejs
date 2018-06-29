@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app.profile">
 
 <head>
 	<title>Tài Khoản</title>
@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="/assets/css/ProfilePage.css">
 </head>
 
-<body>
+<body ng-controller="profileController">
 	<div class="super_container">
 		<!-- Header -->
 		<%- include ../header.ejs %>
@@ -167,22 +167,22 @@
 							<ul class="logos_list">
 								<li>
 									<a href="#">
-										<img src="images/logos_1.png" alt="">
+										<img src="/assets/images/icon/logos_1.png" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="images/logos_2.png" alt="">
+										<img src="/assets/images/icon/logos_2.png" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="images/logos_3.png" alt="">
+										<img src="/assets/images/icon/logos_3.png" alt="">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="images/logos_4.png" alt="">
+										<img src="/assets/images/icon/logos_4.png" alt="">
 									</a>
 								</li>
 							</ul>
@@ -198,8 +198,11 @@
 	</div>
 
 	<script src="/assets/js/jquery-3.3.1.min.js"></script>
-	<script src="/assets/styles/bootstrap4/popper.js"></script>
-	<script src="/assets/styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="/assets/js/popper.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/angular.min.js "></script>
+	<script src="/assets/js/main/profile.js "></script>
+	<script src="/assets/js/main/services/svProfile.js "></script>
 	<script src="/assets/plugins/greensock/TweenMax.min.js"></script>
 	<script src="/assets/plugins/greensock/TimelineMax.min.js"></script>
 	<script src="/assets/plugins/scrollmagic/ScrollMagic.min.js"></script>

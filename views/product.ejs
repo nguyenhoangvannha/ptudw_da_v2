@@ -98,7 +98,11 @@
 
                                     <div class="product_price">{{product.GIABAN}} $</div>
                                     <div class="button_container">
+                                            <% if(isLogged)
+                                            {%>
                                         <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" ng-click="addToCart(product);" style="color: white" role="button">Thêm vào giỏ hàng</a>
+                                        <%}
+                                        %>
                                     </div>
 
                                 </form>

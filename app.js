@@ -13,12 +13,12 @@ var shopRouter = require('./routes/shop');
 var searchRouter = require('./routes/search');
 var GovernanceRouter = require('./routes/Governance');
 var addRouter = require('./routes/add');
+var editRouter = require('./routes/edit');
 //////////////Nhân///////////////////////////
 var signlogRouter = require('./routes/signlog');
 var session = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 ///////////////////Nhân////////////////////////////////////
-
 var app = express();
 
 var port = process.env.PORT || 3000;
@@ -71,6 +71,7 @@ app.use('/search',searchRouter);
 app.use('/Governance',GovernanceRouter);
 app.use('/add',addRouter);
 app.use('/signlog', signlogRouter);
+app.use('/Governance/edit', editRouter);
 app.listen(port, function () {
   console.log('App listeing on port', port);
 });

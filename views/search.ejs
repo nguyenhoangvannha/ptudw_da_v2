@@ -129,7 +129,11 @@
                                             <img class="card-img-right flex-auto d-none d-md-block"  alt="{{item.TEN.substring(0,16)}}..." style="width: 220px; height: 170px;" src="/assets/carsdata{{item.HINHANH}}" data-holder-rendered="true">
         
                                             <div class="product_extras">
+                                                    <% if(isLogged)
+                                                    {%>
                                                 <a href="javascript:void(0);" name="" id="" class="btn btn-primary btn-buy" ng-click="addToCart(item);" style="color: white" role="button">Thêm vào giỏ hàng</a>
+                                                <%}
+                                                %>
                                             </div>                                
                                         </div>
                                 </div>

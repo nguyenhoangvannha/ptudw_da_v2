@@ -20,15 +20,14 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }).single('hinh');
 
 
-router.get('/', function (req, res) {
-   var log=req.session.isLogged;
-              var name=req.session.username;
-              var admin = false;
-              if(name==='ThienNhan') admin = true;
-              if(admin===false) res.redirect('/');
-    res.render('add');
+router.get('/:id', function (req, res) {
+    var ID=req.params['id'];
+    var vm={
+        id: ID
+    }
+    res.render('edit', vm);
 });
-router.post('/',urlencodedParser, function(req,res){
+router.post('/edit',urlencodedParser, function(req,res){
     upload(req, res, function (err) {
         if (err) {
           res.send("LOI");
@@ -37,7 +36,7 @@ router.post('/',urlencodedParser, function(req,res){
             res.send("Ban chua chon file");
           }else{
             
-            productRepo.add(req.body).then(value => {
+            productRepo.edit(req.body).then(value => {
               //var log=req.session.isLogged;
               //var name=req.session.username;
               //var admin = false;

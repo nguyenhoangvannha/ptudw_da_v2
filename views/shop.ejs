@@ -95,7 +95,7 @@
                                     <div class="product_border"></div>
                                     <div class="product_image d-flex flex-column align-items-center justify-content-center">
                                         <a href="/product/{{currentProducts[i].NHASANXUAT}}/{{currentProducts[i].ID}}" tabindex="0">
-                                            <img src="/assets/carsdata{{currentProducts[i].HINHANH}}" alt="" width="140" height="100">
+                                            <img src="/assets/carsdata{{currentProducts[i].HINHANH}}" alt="{{currentProducts[i].TEN}}" width="140" height="100">
                                         </a>
                                     </div>
                                     <div class="product_content ">
@@ -104,7 +104,7 @@
                                         </a>
                                         <div class="product_name ">
                                             <div>
-                                                <a href="/product/{{currentProducts[i].NHASANXUAT}}/{{currentProducts[i].ID}}" tabindex="0">{{currentProducts[i].TEN}}...</a>
+                                                <a href="/product/{{currentProducts[i].NHASANXUAT}}/{{currentProducts[i].ID}}" title="{{currentProducts[i].TEN}}" tabindex="0">{{currentProducts[i].TEN.substr(0,18)}}...</a>
                                             </div>
                                         </div>
                                         <div class="product_extras">
